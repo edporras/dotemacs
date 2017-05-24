@@ -1,6 +1,13 @@
 ;; -*- emacs-lisp -*-
 
 ;; turn off splash screen messages
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq inhibit-startup-echo-area-message t
       inhibit-startup-screen t)
 
@@ -24,7 +31,8 @@
 (setq slime-net-coding-system 'utf-8-unix)
 
 ;; I'll be sending files from the command line
-(server-start)
+;; ** deprecated in favor of export ALTERNATE_EDITOR="", emacsclient -t/-c
+;;(server-start)
 
 ;;; local lisp packages for this configuration live here
 (add-to-list 'load-path (concat user-emacs-directory "lisp"))
