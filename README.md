@@ -11,23 +11,10 @@ available via the ELPA-compatible repositories.
 If you would like to test out this configuration, clone this repo and
 place it in your home directory as the directory `.emacs.d`.
 
-I install emacs on Mac OS X using [homebrew](http://brew.sh/). Note
-that the current formula has been updated to install Emacs 25 and the
-git history no longer includes the commit for 24.5. Until this
-configuration is made compatibly with it, you'll need to update the
-formula to install 24.5 by copying
-`/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/emacs.rb`
-and updating the `url` and `sha256` to:
-
-``` ruby
-  url "https://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.xz"
-  sha256 "dd47d71dd2a526cf6b47cb49af793ec2e26af69a0951cc40e43ae290eacfc34e"
-```
-
-Then install it:
+I install emacs on Mac OS X using [homebrew](http://brew.sh/):
 
 ```bash
-$ brew install emacs --with-gnutls --with-cocoa ./emacs.rb
+$ brew install emacs --with-cocoa emacs
 ```
 
 Once this is complete, you should also install the
