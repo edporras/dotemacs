@@ -1,4 +1,8 @@
+;;; package --- Summary
+;;; Commentary:
 ;; FIXME might want to `add-to-list` instead
+
+;;; Code:
 (setq package-archives
       '(("gnu"          . "https://elpa.gnu.org/packages/")
 ;        ("marmalade"    . "https://marmalade-repo.org/packages/")
@@ -34,7 +38,6 @@
 (use-package clean-aindent-mode   :ensure t)
 (use-package clojure-mode         :ensure t)
 (use-package coffee-mode          :ensure t)
-(use-package color-theme          :ensure t)
 (use-package company              :ensure t)
 (use-package company-ghc          :ensure t)
 (use-package company-inf-ruby     :ensure t)
@@ -115,3 +118,5 @@
 (use-package which-key       :ensure t)
 (use-package yaml-mode       :ensure t)
 (use-package yasnippet       :ensure t)
+
+;;; 01-packages.el ends here
