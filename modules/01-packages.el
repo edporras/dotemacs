@@ -87,7 +87,6 @@
   :ensure t
   :pin org)
 
-(use-package pallet          :ensure t)
 (use-package paredit         :ensure t)
 (use-package parenface-plus  :ensure t)
 (use-package pkg-info        :ensure t)
