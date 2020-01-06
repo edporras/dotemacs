@@ -28,7 +28,7 @@
 ;; Various superfluous white-space: kill it
 (defun cleanup-buffer-safe ()
   "Perform a bunch of safe operations on the whitespace content of a buffer.
-Does not indent buffer, because it is used for a before-save-hook, and that
+Does not indent buffer, because it is used for a 'before-save-hook', and that
 might be bad."
   (interactive)
   (untabify (point-min) (point-max))
@@ -95,7 +95,7 @@ Including indent-buffer, which should not be called automatically on save."
      (dolist (binding (list (kbd "M-<up>") (kbd "M-<down>") (kbd "C-M-<left>") (kbd "C-M-<right>")))
        (define-key paredit-mode-map binding nil))
 
-     ;; not just in lisp mode(s) 
+     ;; not just in lisp mode(s)
      (global-set-key (kbd "C-M-<left>") 'backward-sexp)
      (global-set-key (kbd "C-M-<right>") 'forward-sexp)
 
@@ -209,7 +209,7 @@ Including indent-buffer, which should not be called automatically on save."
 (require 'cider-eval-sexp-fu)
 (setq cider-eval-sexp-fu-flash-duration 0.2)
 
-;;;;;; HASKELL 
+;;;;;; HASKELL
 
 ;;;; Haskell
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
@@ -217,6 +217,9 @@ Including indent-buffer, which should not be called automatically on save."
 
 ;; Ignore compiled Haskell files in filename completions
 (add-to-list 'completion-ignored-extensions ".hi")
+
+;;(require 'haskell-mode)
+;;(require 'tidal)
 
 ;;;;;; RUBY/RUBYMOTION
 
