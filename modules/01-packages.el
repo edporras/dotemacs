@@ -38,10 +38,13 @@
 (use-package company-go           :ensure t)
 (use-package csv-mode             :ensure t)
 (use-package dash                 :ensure t)
-
 (use-package diminish             :ensure t)
+
 (use-package dockerfile-mode      :ensure t)
 (use-package docker-tramp         :ensure t)
+(use-package doom-modeline ;;  Run M-x all-the-icons-install-fonts
+  :ensure t
+  :hook (after-init . doom-modeline-mode))
 (use-package enh-ruby-mode        :ensure t)
 (use-package elisp-slime-nav      :ensure t)
 (use-package epl                  :ensure t)
@@ -84,7 +87,7 @@
 (use-package paredit         :ensure t)
 (use-package parenface-plus  :ensure t)
 (use-package pkg-info        :ensure t)
-(use-package powerline       :ensure t)
+;;(use-package powerline       :ensure t)
 (use-package pretty-symbols  :ensure t)
 (use-package processing-mode :ensure t)
 (use-package rainbow-mode    :ensure t)
