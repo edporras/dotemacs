@@ -37,9 +37,11 @@
 (if (fboundp 'set-fontset-font)
 	(set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend))
 
-;; unblinking bar-style cursor
-(blink-cursor-mode 0)
-(setq default-cursor-type 'bar)
+;; cursor settings
+;;(setq default-cursor-type 'bar)
+(setq cursor-type 'box)
+(blink-cursor-mode 100)
+;;(setq cursor-in-non-selected-windows nil)
 
 ;; fancy lambda, &c
 (global-prettify-symbols-mode 1)

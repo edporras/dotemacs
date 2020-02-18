@@ -1,4 +1,7 @@
-;; -*- emacs-lisp -*-
+;;; package --- Summary
+;;; Commentary:
+
+;;; Code:
 
 ;;; GENERAL
 
@@ -225,8 +228,40 @@ Including indent-buffer, which should not be called automatically on save."
 ;;;;;; RUBY/RUBYMOTION
 
 ;; ruby, using robe
-(add-hook 'ruby-mode-hook 'flymake-ruby-load)
+;;(add-hook 'ruby-mode-hook 'flymake-ruby-load)
 (add-hook 'ruby-mode-hook 'robe-mode)
+
+;; enh-ruby
+(autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
+(add-hook 'enh-ruby-mode-hook 'robe-mode)
+(defvar ruby-insert-encoding-magic-comment)
+(setq ruby-insert-encoding-magic-comment nil)
+(add-to-list 'auto-mode-alist
+             '("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
+(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+
+;; rbenv
+(require 'rbenv)
+(global-rbenv-mode)
+
+;; rspec
+(require 'rspec-mode)
+(defadvice rspec-compile (around rspec-compile-around)
+  "Use BASH shell for running the specs because of ZSH issues."
+  (let ((shell-file-name "/bin/bash"))
+    ad-do-it))
+(ad-activate 'rspec-compile)
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
+(add-hook 'inferior-ruby-mode-hook 'ansi-color-for-comint-on)
+
+;; rubocop
+(require 'rubocop)
+(defvar flycheck-ruby-rubocop-executable)
+(setq flycheck-ruby-rubocop-executable (concat (getenv "HOME") "/.rbenv/shims/rubocop"))
+(setq rubocop-check-command (concat (getenv "HOME") "/.rbenv/shims/rubocop --format emacs"))
+(defun rubocop-ensure-installed ())
+(add-hook 'ruby-mode-hook #'rubocop-mode)
+(add-hook 'compilation-filter-hook 'inf-ruby-auto-enter)
 
 ;; some ruby motion stuff
 (require 'motion-mode)
@@ -279,3 +314,10 @@ Including indent-buffer, which should not be called automatically on save."
 (require 'restclient)
 (define-key restclient-mode-map (kbd "<s-return>") 'restclient-http-send-current)
 
+;;;;;; WEB
+;; web-mode
+(defvar web-mode-css-indent-offset)
+(setq web-mode-css-indent-offset 2)
+
+(provide '06-prog-modes)
+;;; 06-prog-modes.el ends here
