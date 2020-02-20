@@ -11,7 +11,10 @@
 (require 'undo-tree)
 (global-undo-tree-mode 1)
 
-;; git
+;; eyebrowse for saving buffer configs
+(eyebrowse-mode t)
+
+;; ma-git, as Sybs would say it
 (defvar magit-mode-map)
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "C-x g") 'magit-status)

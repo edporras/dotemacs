@@ -50,6 +50,7 @@
 (use-package epl                  :ensure t)
 (use-package exec-path-from-shell :ensure t)
 (use-package expand-region        :ensure t)
+(use-package eyebrowse            :ensure t)
 (use-package find-file-in-project :ensure t)
 
 (use-package flycheck
