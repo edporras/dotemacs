@@ -12,3 +12,6 @@ eshell
 smex-items
 network-security.data
 .cask
+transient
+session*
+replace-colorthemes
