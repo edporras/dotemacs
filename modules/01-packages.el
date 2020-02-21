@@ -57,6 +57,12 @@
   :ensure t
   :init (global-flycheck-mode))
 
+(use-package flycheck-clj-kondo   :ensure t)
+(use-package clojure-mode
+  :ensure t
+  :config
+  (require 'flycheck-clj-kondo))
+
 ;; (use-package flymake-coffee       :ensure t)
 ;; (use-package flymake-cursor       :ensure t)
 ;; (use-package flymake-easy         :ensure t)
