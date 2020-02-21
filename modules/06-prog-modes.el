@@ -212,6 +212,10 @@ Including indent-buffer, which should not be called automatically on save."
 
 (require 'cider-eval-sexp-fu)
 (setq cider-eval-sexp-fu-flash-duration 0.2)
+;; I like output the old way even if it's frowned upon
+(setq cider-use-overlays t)
+(setq cider-overlays-use-font-lock t)
+;;(setq cider-result-overlay-position 'at-point) ;; nope
 
 ;;;;;; HASKELL
 
