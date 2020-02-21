@@ -52,10 +52,6 @@
 (eval-after-load 'undo-tree
   '(diminish 'undo-tree-mode))
 
-;; locally hacked version of noctilux, turning into something else
-(add-to-list 'load-path (concat user-emacs-directory "eigengrau/"))
-(require 'eigengrau-theme)
-
 ;; doom-modeline config
 ;;(setq doom-modeline-height 20)
 (set-face-attribute 'mode-line nil :family "Meslo LG S DZ Regular" :height 110)
