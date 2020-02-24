@@ -28,6 +28,10 @@
 (use-package cider
   :ensure t
   :pin melpa-stable)
+(use-package cider-eval-sexp-fu
+  :ensure t
+  :config
+  (require 'cider))
 
 (use-package clean-aindent-mode   :ensure t)
 (use-package clojure-mode         :ensure t)
@@ -63,7 +67,7 @@
   :config
   (require 'flycheck-clj-kondo))
 
-;; (use-package flymake-coffee       :ensure t)
+(use-package flymake-coffee       :ensure t)
 ;; (use-package flymake-cursor       :ensure t)
 ;; (use-package flymake-easy         :ensure t)
 ;; (use-package flymake-ruby         :ensure t)
@@ -104,6 +108,7 @@
 (use-package restclient      :ensure t)
 (use-package rubocop         :ensure t)
 (use-package rspec-mode      :ensure t)
+
 (use-package s               :ensure t)
 (use-package simple-httpd    :ensure t)
 (use-package skewer-mode     :ensure t)

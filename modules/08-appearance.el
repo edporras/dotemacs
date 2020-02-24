@@ -12,7 +12,7 @@
  column-number-mode t
 
  ;; speed up screen re-paint on local sessions
- redisplay-dont-pause t 
+ ;; redisplay-dont-pause t ;; obsolete as of 24.5
 
  ;; general look and feel things
  font-lock-maximum-decoration t
@@ -82,4 +82,3 @@
 
 (provide '08-appearance)
 ;;; 08-appearance.el ends here
-
