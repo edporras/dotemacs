@@ -114,6 +114,7 @@
 (use-package skewer-mode     :ensure t)
 (use-package slime-company   :ensure t)
 (use-package smartparens     :ensure t)
+(use-package smartscan       :ensure t)
 (use-package smex            :ensure t)
 (use-package sr-speedbar     :ensure t)
 

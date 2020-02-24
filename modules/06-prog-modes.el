@@ -57,7 +57,9 @@ Including indent-buffer, which should not be called automatically on save."
             (define-key (current-local-map) (kbd "s-k") 'recompile)
             ;; prog-mode-hook to hightlight XXX, BUG and TODO in code
             (font-lock-add-keywords
-             nil '(("\\<\\(XXX\\|BUG\\|TODO\\)" 1 font-lock-warning-face prepend)))))
+             nil '(("\\<\\(XXX\\|BUG\\|TODO\\)" 1 font-lock-warning-face prepend)))
+            (smartscan-mode 1)
+            ))
 
 ;; reindent-then-newline-and-indent is bad news for python's
 ;; syntactically important whitespace
