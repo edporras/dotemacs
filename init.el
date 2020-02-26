@@ -32,7 +32,7 @@
 (setq slime-net-coding-system 'utf-8-unix)
 
 ;; I'll be sending files from the command line
-(server-start)
+;;(server-start)
 
 ;;; local lisp packages for this configuration live here
 (add-to-list 'load-path (concat user-emacs-directory "lisp"))
