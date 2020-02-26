@@ -51,8 +51,8 @@
 ;; expand-region is super handy! I like having expand- and contract-
 ;; side by side within easy reach.
 (require 'expand-region)
-(global-set-key (kbd "s-1") 'er/expand-region)
-(global-set-key (kbd "s-2") 'er/contract-region)
+(global-set-key (kbd "C-1") 'er/expand-region)
+(global-set-key (kbd "C-2") 'er/contract-region)
 
 ;; I can't get today's kids interested in set-mark, so I've repurposed
 ;; C-SPC for ace-jump-mode.
