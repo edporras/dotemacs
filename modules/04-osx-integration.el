@@ -13,6 +13,13 @@
 (setq shift-select-mode t) 
 (delete-selection-mode t)
 
+;; if shift-arrow doesn't select, enable and define these in
+;; Terminal's keyboard prefs to match
+(define-key input-decode-map "\e[1;2A" [S-up])
+(define-key input-decode-map "\e[1;2B" [S-down])
+(define-key input-decode-map "\e[1;2D" [S-left])
+(define-key input-decode-map "\e[1;2C" [S-right])
+
 ;;;; Normalize key bindings with Mac OS X system ones
 
 ;; command + up/down/left/right = file start/end, line start/end
