@@ -100,7 +100,8 @@ Including indent-buffer, which should not be called automatically on save."
      (global-set-key (kbd "C-M-<right>") 'forward-sexp)
 
      (global-set-key (kbd "M-(") 'paredit-wrap-round)
-     (global-set-key (kbd "M-[") 'paredit-wrap-square)
+     ;; this conflicts w/ input-decode-map in emacs-25 and up -ep
+     ;;     (global-set-key (kbd "M-[") 'paredit-wrap-square)
      (global-set-key (kbd "M-{") 'paredit-wrap-curly)
 
      (global-set-key (kbd "M-)") 'paredit-close-round-and-newline)
