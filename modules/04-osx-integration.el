@@ -1,4 +1,6 @@
-;; -*- emacs-lisp -*-
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 
 ;; use OS X's Spotlight for M-x locate
 (setq locate-make-command-line (lambda (s) `("mdfind" "-name" ,s)))
@@ -83,3 +85,6 @@
 
   ;; does not work yet in railway cat :(
   (setq mac-right-alternate-modifier nil))
+
+(provide '04-osx-integration)
+;;; 04-osx-integration.el ends here

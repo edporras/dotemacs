@@ -1,4 +1,6 @@
-;; -*- emacs-lisp -*-
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 
 (require 'markdown-mode)
 
@@ -90,3 +92,5 @@ is displayed in the mode-line."
 (define-key org-mode-map (kbd "s->") 'org-metaright)
 (define-key org-mode-map (kbd "s-<") 'org-metaleft)
 
+(provide '07-prose-and-notes)
+;;; 07-prose-and-notes.el ends here

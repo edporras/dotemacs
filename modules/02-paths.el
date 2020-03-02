@@ -1,6 +1,7 @@
-;; -*- emacs-lisp -*-
+;;; package -- Summary
+;;; Commentary:
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; PATHS
+;;; Code:
 
 ;; place backup files here, rather than sprinkling them everywhere.
 (setq backup-directory-alist
@@ -23,3 +24,6 @@
 ;;
 ;; ... whenever the path changes to ensure the path is available to
 ;; programs launched via Spotlight, the Dock, Finder, &c.
+
+(provide '02-paths)
+;;; 02-paths.el ends here

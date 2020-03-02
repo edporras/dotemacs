@@ -1,11 +1,13 @@
-;; -*- emacs-lisp -*-
+;;; package -- Summary
+;;; Commentary:
+
+;;; Code:
 
 ;;; DATA MUNGING
-
 (require 's)
 
 (defun reformat-field (str)
-  "Trims leading/trailing whitespace from `str`, then converts it
+  "Trims leading/trailing whitespace from STR, then converts it
 to a number if the string looks like a number."
   (let ((s (s-trim str)))
     (if (and (string-match "[\$\.,0-9]+" s) (= (match-end 0) (length s)))
@@ -13,7 +15,7 @@ to a number if the string looks like a number."
       s)))
 
 (defun tsv-to-sexp (tsv)
-  "Parses the string `tsv` as a tab-separated-value file,
+  "Parses the string TSV as a tab-separated-value file,
 returning a sexp containing the values with strings converted to
 numbers where appropriate."
   (-map (lambda (s) (-map 'reformat-field (s-split "\t" s))) (s-lines tsv)))
@@ -22,7 +24,7 @@ numbers where appropriate."
 
 ;;; some of the keycodes produced by OSX are inscrutable
 (defun insert-key-sequence (key-repr)
-  "Reads a literal key sequence from the user and inserts a
+  "Reads a literal key sequence KEY-REPR from the user and inserts a
 representation of it at point, suitable for `global-set-key' or
 `local-set-key'."
   (interactive "KKey sequence? ")
@@ -49,3 +51,6 @@ representation of it at point, suitable for `global-set-key' or
                    name (file-name-nondirectory new-name)))))))
 
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+
+(provide '99-misc)
+;;; 99-misc.el ends here

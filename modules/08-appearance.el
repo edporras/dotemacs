@@ -1,4 +1,7 @@
-;; -*- emacs-lisp -*-
+;;; package --- Summary
+;;; Commentary:
+
+;;; Code:
 
 ;; enable sRGB colors in the Cocoa version of em
 ;;(setq ns-use-srgb-colorspace t)
@@ -68,4 +71,7 @@
      `(company-tooltip-common ((t (:inherit font-lock-constant-face))))
      `(company-tooltip-common-selection ((t (:inherit font-lock-keyword-face))))
      `(company-tooltip-selection ((t (:inherit font-lock-keyword-face))))))
+
+(provide '08-appearance)
+;;; 08-appearance.el ends here
 
