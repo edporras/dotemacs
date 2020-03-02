@@ -26,8 +26,6 @@
 (define-key global-map (kbd "<M-kp-delete>") 'paredit-forward-kill-word)
 
 ;; undo-tree-mode aliased to command+z/shift+command+z
-(require 'undo-tree)
-(global-undo-tree-mode 1)
 (global-set-key (kbd "s-z") 'undo)           
 (global-set-key (kbd "s-Z") 'undo-tree-redo)
 
@@ -82,9 +80,6 @@
   (global-set-key [(super w)]
                   (lambda () (interactive) (delete-window)))
   (global-set-key [(super z)] 'undo)
-
-  ;; turn off super disturbing visible bell
-  (setq visible-bell nil)
 
   ;; does not work yet in railway cat :(
   (setq mac-right-alternate-modifier nil))
