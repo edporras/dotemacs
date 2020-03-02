@@ -80,8 +80,8 @@ Including indent-buffer, which should not be called automatically on save."
 (define-key emacs-lisp-mode-map (kbd "<S-s-return>") 'eval-defun)
 
 ;; pretty print!
-(define-key emacs-lisp-mode-map (kbd "C-c C-p") 'pp-eval-last-sexp)
-(define-key lisp-interaction-mode-map (kbd "C-c C-p") 'pp-eval-last-sexp)
+;;(define-key emacs-lisp-mode-map (kbd "C-c C-p") 'pp-eval-last-sexp)
+;;(define-key lisp-interaction-mode-map (kbd "C-c C-p") 'pp-eval-last-sexp)
 
 ;;; PAREDIT
 
@@ -198,24 +198,27 @@ Including indent-buffer, which should not be called automatically on save."
      (setq cider-repl-use-clojure-font-lock t)
      (setq cider-repl-pop-to-buffer-on-connect nil)
      (setq nrepl-use-ssh-fallback-for-remote-hosts 't)
-     (setq cider-use-overlays nil)))
+     (setq cider-use-overlays t)
+     (setq cider-overlays-use-font-lock t)
+     ;;(setq cider-result-overlay-position 'at-point) ;; nope
+     (setq cider-print-fn (quote fipp))
+     (setq cider-print-options '(("print-length" 40) ("width" 70) ("fill-column" 40))) ;; options for 'fipp
+     ;;(setq cider-print-options '(("length" 50) ("right-margin" 70) ("fill-column" 30))) ;; options for clojure 'pprint
+     ;;(setq cider-interactive-eval-output-destination 'output-buffer)
+     ))
 
 ;; I like this keybinding from Lighttable
 (eval-after-load 'clojure-mode
   '(progn
-     (define-key clojure-mode-map (kbd "<s-return>") 'cider-eval-last-sexp)
+     ;;(define-key clojure-mode-map (kbd "<s-return>") 'cider-eval-last-sexp)
      ;; add shift to eval the last expression, rather than the top-level one
-     (define-key clojure-mode-map (kbd "<S-s-return>") 'cider-eval-defun-at-point)
+     ;;(define-key clojure-mode-map (kbd "<S-s-return>") 'cider-eval-defun-at-point)
      (define-key clojure-mode-map (kbd "<C-S-s-return>") 'cider-eval-buffer)
      (add-to-list 'auto-mode-alist '("\\.edn\\'" . clojure-mode))
      (add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))))
 
 (require 'cider-eval-sexp-fu)
 (setq cider-eval-sexp-fu-flash-duration 0.2)
-;; I like output the old way even if it's frowned upon
-(setq cider-use-overlays t)
-(setq cider-overlays-use-font-lock t)
-;;(setq cider-result-overlay-position 'at-point) ;; nope
 
 ;;;;;; HASKELL
 
