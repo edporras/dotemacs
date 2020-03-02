@@ -1,17 +1,11 @@
 ;;; package --- Summary
 ;;; Commentary:
-;; FIXME might want to `add-to-list` instead
 
 ;;; Code:
-(setq package-archives
-      '(("gnu"          . "https://elpa.gnu.org/packages/")
-;        ("marmalade"    . "https://marmalade-repo.org/packages/")
-        ("melpa"        . "https://melpa.org/packages/")
-        ("melpa-stable" . "https://stable.melpa.org/packages/")
-        ("org"          . "http://orgmode.org/elpa/"))) ;; no https :(
 
-;;;; We need the `use-package` package before we use `use-package` to use all our packages
-(package-initialize)
+(add-to-list 'package-archives '("gnu"          . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+;(add-to-list 'package-archives '("marmalade"    . "https://marmalade-repo.org/packages/"))
 
 (unless (file-exists-p (expand-file-name "archives/melpa" package-user-dir))
   (package-refresh-contents))
