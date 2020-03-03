@@ -41,6 +41,9 @@
            (split-window-below)))))
 (setq split-window-preferred-function #'my-sensible-window-split)
 
+;; don't ask if I want to follow symlinks please
+(setq vc-follow-symlinks t)
+
 ;; Package: clean-aindent-mode
 (require 'clean-aindent-mode)
 ;;(add-hook 'prog-mode-hook 'clean-aindent-mode)
