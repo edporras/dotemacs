@@ -20,6 +20,9 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (define-key magit-mode-map [remap previous-line] 'magit-previous-line)
 (define-key magit-mode-map [remap next-line] 'magit-next-line)
+; re-enable --set-upstream switch
+(magit-define-popup-switch 'magit-push-popup
+  ?u "Set upstream" "--set-upstream")
 
 ;; docker
 (require 'dockerfile-mode)
