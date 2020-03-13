@@ -27,7 +27,13 @@
   '(progn
      (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))))
 
-;; window splitting. Don't remember where I found this but it's useful
+;; j2
+(require 'jinja2-mode)
+(eval-after-load 'jinja2-mode
+  '(progn
+     (add-to-list 'auto-mode-alist '("\\.j2\\'" . jinja2-mode))))
+
+;; Window splitting. Don't remember where I found this but it's useful
 ;; on wide displays where emacs tends to stubbornly split horizontally.
 (defun my-sensible-window-split (&optional window)
   "Be better about splitting the WINDOW."

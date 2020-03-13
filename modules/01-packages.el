@@ -82,9 +82,10 @@
 (use-package highlight            :ensure t)
 (use-package ido-completing-read+ :ensure t)
 (use-package inf-ruby             :ensure t)
+
+(use-package jinja2-mode          :ensure t)
 (use-package js2-mode             :ensure t)
 (use-package js2-refactor         :ensure t)
-
 (use-package json-mode            :ensure t)
 (use-package magit                :ensure t)
 (use-package markdown-mode        :ensure t
