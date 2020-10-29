@@ -81,6 +81,7 @@
 (use-package haskell-mode         :ensure t)
 (use-package highlight            :ensure t)
 (use-package ido-completing-read+ :ensure t)
+(use-package ido-grid-mode        :ensure t)
 (use-package inf-ruby             :ensure t)
 
 (use-package jinja2-mode          :ensure t)
