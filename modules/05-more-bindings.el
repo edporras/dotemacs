@@ -1,4 +1,17 @@
-;; -*- emacs-lisp -*-
+;;; package --- Summary
+;;; Commentary:
+
+;;; Code:
+
+(defadvice yes-or-no-p (around prevent-dialog activate)
+  "Prevent 'yes-or-no-p' from activating a dialog."
+  (let ((use-dialog-box nil))
+    ad-do-it))
+(defadvice y-or-n-p (around prevent-dialog-yorn activate)
+  "Prevent 'y-or-n-p' from activating a dialog."
+  (let ((use-dialog-box nil))
+    ad-do-it))
+(setq use-dialog-box nil)
 
 ;; I will not type 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -67,3 +80,5 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;;; 05-more-bindings.el ends here
