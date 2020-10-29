@@ -327,6 +327,12 @@ Including indent-buffer, which should not be called automatically on save."
 ;; web-mode
 (defvar web-mode-css-indent-offset)
 (setq web-mode-css-indent-offset 2)
+(eval-after-load 'web-mode
+  '(progn
+     (add-to-list 'auto-mode-alist '("\\.html?\\'"  . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.erb\\'"    . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.[s]css\\'" . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.php\\'"    . web-mode))))
 
 (provide '06-prog-modes)
 ;;; 06-prog-modes.el ends here
