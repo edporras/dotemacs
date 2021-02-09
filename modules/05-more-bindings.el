@@ -75,8 +75,15 @@
 
 ;; I can't get today's kids interested in set-mark, so I've repurposed
 ;; C-SPC for ace-jump-mode.
-(require 'ace-jump-mode)
-(global-set-key (kbd "C-SPC") 'ace-jump-mode)
+;; (require 'ace-jump-mode)
+;; (global-set-key (kbd "C-SPC") 'ace-jump-mode)
+
+;; avy
+(require 'avy)
+(global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "C-'") 'avy-goto-char-timer)  ;avy-goto-char-2
+(global-set-key (kbd "M-g g") 'avy-goto-line)
+(global-set-key (kbd "M-g w") 'avy-goto-word-1)
 
 ;; Enable which-key for function discovery
 (which-key-mode)

@@ -18,13 +18,14 @@
 ;;;; - Line breaks
 ;;;;   - every 10 packages, or
 ;;;;   - if the package requires special config (e.g. pinning to a particular archive)
-(use-package ace-jump-mode     :ensure t)
+;;(use-package ace-jump-mode     :ensure t)
 ;;(use-package ack-and-a-half    :ensure t)
 (use-package ag                :ensure t)
 (use-package aggressive-indent :ensure t)
 (use-package anakondo
   :ensure t
   :commands anakondo-minor-mode)
+(use-package avy               :ensure t)
 (use-package bundler           :ensure t)
 (use-package caml              :ensure t)
 
