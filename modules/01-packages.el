@@ -120,6 +120,7 @@
 (use-package paren-face      :ensure t
   :init (global-paren-face-mode))
 (use-package pkg-info        :ensure t)
+(use-package poly-ansible    :ensure t)
 ;;(use-package powerline       :ensure t)
 (use-package pretty-symbols  :ensure t)
 (use-package processing-mode :ensure t)
