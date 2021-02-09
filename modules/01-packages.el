@@ -22,12 +22,26 @@
 ;;(use-package ack-and-a-half    :ensure t)
 (use-package ag                :ensure t)
 (use-package aggressive-indent :ensure t)
+(use-package anakondo
+  :ensure t
+  :commands anakondo-minor-mode)
 (use-package bundler           :ensure t)
 (use-package caml              :ensure t)
 
 (use-package cider
   :ensure t
-  :pin melpa-stable)
+  :pin melpa-stable
+  :config
+  (advice-add 'cider-ansi-color-string-p :override
+              (lambda (string) (string-match "�\\[" string)))
+  (advice-add 'cider-font-lock-as
+              :before
+              (lambda (&rest r)
+                (advice-add 'substring-no-properties :override #'identity)))
+  (advice-add 'cider-font-lock-as
+              :after
+              (lambda (&rest r)
+                (advice-remove 'substring-no-properties #'identity))))
 (use-package cider-eval-sexp-fu
   :ensure t
   :config

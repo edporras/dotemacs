@@ -196,6 +196,11 @@ Including indent-buffer, which should not be called automatically on save."
   '(progn
      (add-hook 'cider-mode-hook 'eldoc-mode)
      (add-hook 'cider-interaction-mode-hook 'eldoc-mode)
+     ;; Enable anakondo-minor-mode in all Clojure(script) and cljc buffers.
+     ;; NOTE: recommended to be done after adding cider-mode-hook
+     ;; (add-hook 'clojure-mode-hook #'anakondo-minor-mode)
+     ;; (add-hook 'clojurescript-mode-hook #'anakondo-minor-mode)
+     ;; (add-hook 'clojurec-mode-hook #'anakondo-minor-mode)
      (setq cider-repl-print-length 1000)
      (setq cider-repl-use-clojure-font-lock t)
      (setq cider-repl-pop-to-buffer-on-connect nil)
