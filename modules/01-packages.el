@@ -103,7 +103,8 @@
   :pin org)
 
 (use-package paredit         :ensure t)
-(use-package parenface-plus  :ensure t)
+(use-package paren-face      :ensure t
+  :init (global-paren-face-mode))
 (use-package pkg-info        :ensure t)
 ;;(use-package powerline       :ensure t)
 (use-package pretty-symbols  :ensure t)

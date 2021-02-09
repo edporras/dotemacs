@@ -65,10 +65,6 @@
 ;;(setq doom-modeline-persp-name t)
 ;;(setq doom-modeline-display-default-persp-name nil)
 
-;; dim the parentheses
-(require 'parenface-plus)
-(set-face-foreground 'paren-face "#666")
-
 ;; these break launching of emacs-26 daemon -ep
 ;; customize company-mode's popup
 ;; (let ((bg (face-attribute 'default :background)))
