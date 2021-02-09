@@ -78,6 +78,10 @@ is displayed in the mode-line."
                          (kbd "M-S-<up>")))
     (define-key org-mode-map binding nil)))
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((elasticsearch . t)))
+
 ;; Retain shift-selection in org-mode as well
 (setq org-support-shift-select 'always)
 (define-key org-mode-map [remap backward-paragraph] nil)

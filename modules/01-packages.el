@@ -52,6 +52,7 @@
 (use-package enh-ruby-mode        :ensure t)
 (use-package elisp-slime-nav      :ensure t)
 (use-package epl                  :ensure t)
+(use-package es-mode              :ensure t)
 (use-package exec-path-from-shell :ensure t)
 (use-package expand-region        :ensure t)
 (use-package eyebrowse            :ensure t)

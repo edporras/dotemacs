@@ -36,6 +36,11 @@
   '(progn
      (add-to-list 'auto-mode-alist '("\\.j2\\'" . jinja2-mode))))
 
+;; es-mode
+(add-to-list 'auto-mode-alist '("\\.es$" . es-mode))
+(add-hook 'es-result-mode-hook 'hs-minor-mode)
+(setq es-always-pretty-print 't)
+
 ;; Window splitting. Don't remember where I found this but it's useful
 ;; on wide displays where emacs tends to stubbornly split horizontally.
 (defun my-sensible-window-split (&optional window)
