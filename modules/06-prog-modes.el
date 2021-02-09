@@ -287,6 +287,9 @@ Including indent-buffer, which should not be called automatically on save."
 (define-key motion-mode-map (kbd "C-c C-d") 'motion-dash-at-point)
 (define-key motion-mode-map (kbd "C-c C-p") 'motion-convert-code-region)
 
+;; XML/plist
+(add-to-list 'auto-mode-alist '("\\.plist'" . xml-mode))
+
 ;;;;;; JAVASCRIPT/COFFEESCRIPT
 
 ;; js2-mode
