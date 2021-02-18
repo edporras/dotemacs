@@ -9,7 +9,9 @@
 (require 'package)
 (setq package-archives '(("org"   . "http://orgmode.org/elpa/")
                          ("melpa" . "https://melpa.org/packages/")))
-(package-initialize)
+
+(when (< emacs-major-version 27)
+  (package-initialize))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
