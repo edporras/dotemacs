@@ -88,5 +88,14 @@
         (message "Indented buffer.")))))
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
+;; search for a solution to this and found jack's :)
+(defun json->edn ()
+  (interactive)
+  (shell-command-on-region (region-beginning)
+                           (region-end)
+                           "jet --pretty --keywordize keyword --from json --to edn"
+                           (current-buffer)
+                           t))
+
 (provide '03-utils)
 ;;; 03-utils.el ends here
