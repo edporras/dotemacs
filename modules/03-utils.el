@@ -97,5 +97,10 @@
                            (current-buffer)
                            t))
 
+;; jq-mode
+(autoload 'jq-mode "jq-mode.el"
+  "Major mode for editing jq files" t)
+(add-to-list 'auto-mode-alist '("\\.jq$" . jq-mode))
+
 (provide '03-utils)
 ;;; 03-utils.el ends here

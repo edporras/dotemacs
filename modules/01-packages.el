@@ -101,6 +101,7 @@
 (use-package inf-ruby             :ensure t)
 
 (use-package jinja2-mode          :ensure t)
+(use-package jq-mode              :ensure t)
 (use-package js2-mode             :ensure t)
 (use-package js2-refactor         :ensure t)
 (use-package json-mode            :ensure t)
