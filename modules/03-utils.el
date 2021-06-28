@@ -102,5 +102,10 @@
   "Major mode for editing jq files" t)
 (add-to-list 'auto-mode-alist '("\\.jq$" . jq-mode))
 
+;; https://github.com/raxod502/selectrum
+(selectrum-mode +1)
+(selectrum-prescient-mode +1)
+(prescient-persist-mode +1)
+
 (provide '03-utils)
 ;;; 03-utils.el ends here

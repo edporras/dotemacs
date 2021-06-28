@@ -135,6 +135,8 @@
 (use-package rspec-mode      :ensure t)
 
 (use-package s               :ensure t)
+(use-package selectrum-mode  :ensure t)
+(use-package selectrum-prescient-mode :ensure t)
 (use-package simple-httpd    :ensure t)
 (use-package skewer-mode     :ensure t)
 (use-package slime-company   :ensure t)
