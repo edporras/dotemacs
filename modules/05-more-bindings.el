@@ -52,8 +52,10 @@
 ;; chorded backward kill magnifiers
 (global-set-key [C-M-kp-delete] 'kill-paragraph)
 
+;; isearch
 ;; recenter forward search on match
 (add-hook 'isearch-mode-end-hook 'recenter-top-bottom)
+(setq isearch-lazy-count t)
 
 ;; prefer regexp in my backward search, inputrc-compatible binding
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
