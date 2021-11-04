@@ -209,5 +209,9 @@ length of PATH (sans directory slashes) down to MAX-LEN."
 (selectrum-prescient-mode +1)
 (prescient-persist-mode +1)
 
+;; extra settings
+(setq ring-bell-function 'ignore)
+(setq initial-scratch-message "")
+
 (provide '03-utils)
 ;;; 03-utils.el ends here
