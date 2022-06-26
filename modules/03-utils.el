@@ -107,6 +107,8 @@ length of PATH (sans directory slashes) down to MAX-LEN."
 ;; undo-tree is pretty nifty
 (require 'undo-tree)
 (global-undo-tree-mode 1)
+;; Prevent undo tree files from polluting your git repo
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 
 ;; eyebrowse for saving buffer configs
 (eyebrowse-mode t)
