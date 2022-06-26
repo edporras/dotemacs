@@ -207,9 +207,9 @@ length of PATH (sans directory slashes) down to MAX-LEN."
 (add-to-list 'auto-mode-alist '("\\.jq$" . jq-mode))
 
 ;; https://github.com/raxod502/selectrum
-(selectrum-mode +1)
-(selectrum-prescient-mode +1)
-(prescient-persist-mode +1)
+;; (selectrum-mode +1)
+;; (selectrum-prescient-mode +1)
+;; (prescient-persist-mode +1)
 
 ;; extra settings
 (setq ring-bell-function 'ignore)
