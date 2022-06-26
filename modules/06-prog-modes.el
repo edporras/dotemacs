@@ -89,8 +89,8 @@ Including indent-buffer, which should not be called automatically on save."
 
 ;; paredit all the parens
 (dolist (mode '(scheme emacs-lisp lisp clojure clojurescript))
-    (add-hook (intern (concat (symbol-name mode) "-mode-hook"))
-              'paredit-mode))
+  (add-hook (intern (concat (symbol-name mode) "-mode-hook"))
+            'paredit-mode))
 
 ;; adjust paredit's key bindings so they don't override my preferred
 ;; navigation keys, add brace matching goodies across all modes
@@ -201,6 +201,7 @@ Including indent-buffer, which should not be called automatically on save."
      ;; (add-hook 'clojure-mode-hook #'anakondo-minor-mode)
      ;; (add-hook 'clojurescript-mode-hook #'anakondo-minor-mode)
      ;; (add-hook 'clojurec-mode-hook #'anakondo-minor-mode)
+     (setq cider-enrich-classpath t)
      (setq cider-repl-print-length 1000)
      (setq cider-repl-use-clojure-font-lock t)
      (setq cider-repl-pop-to-buffer-on-connect nil)
@@ -209,6 +210,7 @@ Including indent-buffer, which should not be called automatically on save."
      (setq cider-overlays-use-font-lock t)
      ;;(setq cider-result-overlay-position 'at-point) ;; nope
      (setq cider-print-fn (quote fipp))
+     ;;(setq cider-print-fn (quote zprint))
      (setq cider-print-options '(("print-length" 40) ("width" 70) ("fill-column" 40))) ;; options for 'fipp
      ;;(setq cider-print-options '(("length" 50) ("right-margin" 70) ("fill-column" 30))) ;; options for clojure 'pprint
      ;;(setq cider-interactive-eval-output-destination 'output-buffer)
