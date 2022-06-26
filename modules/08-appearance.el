@@ -58,6 +58,7 @@
 ;;(set-face-attribute 'mode-line-inactive nil :family "Menlo" :height 110)
 (setq doom-modeline-icon t)
 (setq doom-modeline-major-mode-icon t)
+(setq doom-modeline-vcs-max-length 25)
 ;;(setq doom-modeline-major-mode-color-icon nil)
 ;;(setq doom-modeline-minor-modes nil)
 ;;(setq doom-modeline-env-version t)

@@ -106,6 +106,8 @@
 (use-package js2-refactor         :ensure t)
 (use-package json-mode            :ensure t)
 (use-package magit                :ensure t)
+;; (use-package magit-delta
+;;   :hook (magit-mode . magit-delta-mode))
 (use-package markdown-mode        :ensure t
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)

@@ -119,7 +119,11 @@ length of PATH (sans directory slashes) down to MAX-LEN."
 (global-set-key (kbd "C-x g") 'magit-status)
 (define-key magit-mode-map [remap previous-line] 'magit-previous-line)
 (define-key magit-mode-map [remap next-line] 'magit-next-line)
+(setq magit-refresh-status-buffer nil) ; for performance
 (setq magit-push-current-set-remote-if-missing nil)
+(setq magit-revision-insert-related-refs nil)
+(setq magit-diff-highlight-trailing nil)
+(setq magit-diff-paint-whitespace nil)
 ;; re-enable --set-upstream switch
 ;; (magit-define-popup-switch 'magit-push-popup
 ;;                            ?u "Set upstream" "--set-upstream")
