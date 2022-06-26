@@ -77,5 +77,27 @@
 ;;      `(company-tooltip-common-selection ((t (:inherit font-lock-keyword-face))))
 ;;      `(company-tooltip-selection ((t (:inherit font-lock-keyword-face))))))
 
+;;(setq-default show-trailing-whitespace t)
+;; (defun my-hide-trailing-whitespace-maybe ()
+;;   "Disable `show-trailing-whitespace' in selected modes."
+;;   (when (derived-mode-p 'shell-mode
+;;                         'eshell-mode)
+;;     (setq show-trailing-whitespace nil)))
+
+(setq-default show-trailing-whitespace nil)
+(defun me/show-trailing-whitespace ()
+  "Just sets `show-trailing-whitespace'."
+  (setq show-trailing-whitespace t))
+(add-hook 'clojure-mode-hook 'me/show-trailing-whitespace)
+(add-hook 'clojurescript-mode-hook 'me/show-trailing-whitespace)
+(add-hook 'enh-ruby-mode-hook 'me/show-trailing-whitespace)
+(add-hook 'emacs-lisp-mode-hook 'me/show-trailing-whitespace)
+(add-hook 'markdown-mode-hook 'me/show-trailing-whitespace)
+
+;; (add-hook 'after-change-major-mode-hook
+;;           'my-hide-trailing-whitespace-maybe)
+
+
+
 (provide '08-appearance)
 ;;; 08-appearance.el ends here
