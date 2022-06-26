@@ -210,6 +210,10 @@ length of PATH (sans directory slashes) down to MAX-LEN."
   "Major mode for editing jq files" t)
 (add-to-list 'auto-mode-alist '("\\.jq$" . jq-mode))
 
+;; discover-mode
+;; https://www.masteringemacs.org/article/discoverel-discover-emacs-context-menus
+(global-discover-mode 1)
+
 ;; https://github.com/raxod502/selectrum
 ;; (selectrum-mode +1)
 ;; (selectrum-prescient-mode +1)

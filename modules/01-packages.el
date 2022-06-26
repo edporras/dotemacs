@@ -57,8 +57,10 @@
 (use-package company-inf-ruby     :ensure t)
 (use-package company-go           :ensure t)
 (use-package csv-mode             :ensure t)
+
 (use-package dash                 :ensure t)
 (use-package diminish             :ensure t)
+(use-package discover             :ensure t)
 
 (use-package dockerfile-mode      :ensure t)
 (use-package docker-tramp         :ensure t)
