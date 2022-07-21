@@ -10,7 +10,7 @@
 (setq mac-emulate-three-button-mouse t)
 
 ;; shift-select and delete-selection are standard is OS X inputs
-(setq shift-select-mode t) 
+(setq shift-select-mode t)
 (delete-selection-mode t)
 
 ;; if shift-arrow doesn't select, enable and define these in
@@ -35,7 +35,7 @@
 (define-key global-map (kbd "<M-kp-delete>") 'paredit-forward-kill-word)
 
 ;; undo-tree-mode aliased to command+z/shift+command+z
-(global-set-key (kbd "s-z") 'undo)           
+(global-set-key (kbd "s-z") 'undo)
 (global-set-key (kbd "s-Z") 'undo-tree-redo)
 
 ;; the fantastic undo-tree-visualize on C-s-z
