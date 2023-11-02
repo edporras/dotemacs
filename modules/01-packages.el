@@ -54,9 +54,9 @@
 (use-package clojure-mode         :ensure t)
 (use-package coffee-mode          :ensure t)
 (use-package company              :ensure t)
-(use-package company-ghc          :ensure t)
+;; (use-package company-ghc          :ensure t)
 (use-package company-inf-ruby     :ensure t)
-(use-package company-go           :ensure t)
+;;(use-package company-go           :ensure t)
 (use-package csv-mode             :ensure t)
 
 (use-package dash                 :ensure t)
