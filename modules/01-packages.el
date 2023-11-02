@@ -65,7 +65,7 @@
 
 (use-package dockerfile-mode      :ensure t)
 (use-package docker-tramp         :ensure t)
-(use-package doom-modeline ;;  Run M-x all-the-icons-install-fonts
+(use-package doom-modeline ;;  Run M-x nerd-icons-install-fonts
   :ensure t
   :hook (after-init . doom-modeline-mode))
 (use-package enh-ruby-mode        :ensure t)
