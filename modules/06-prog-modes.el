@@ -71,6 +71,7 @@ Including indent-buffer, which should not be called automatically on save."
 
 ;; highlight matching parens, please
 (show-paren-mode)
+(setq show-paren-context-when-offscreen 'overlay)
 
 ;; keybinding stolen from Lighttable, which I'm told stole it from
 ;; Flash.
