@@ -30,7 +30,7 @@
                  "%b"))))
 
 ;; font and spacing
-(set-frame-font "Menlo-14")
+(set-frame-font "Berkeley Mono")
 (setq-default line-spacing 4)
 
 ;; color emoji support
