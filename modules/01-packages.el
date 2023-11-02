@@ -108,6 +108,8 @@
 (use-package js2-mode             :ensure t)
 (use-package js2-refactor         :ensure t)
 (use-package json-mode            :ensure t)
+
+(use-package load-env-vars        :ensure t)
 (use-package magit                :ensure t)
 ;; (use-package magit-delta
 ;;   :hook (magit-mode . magit-delta-mode))
