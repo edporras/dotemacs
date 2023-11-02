@@ -20,7 +20,7 @@
 ;;;;   - if the package requires special config (e.g. pinning to a particular archive)
 ;;(use-package ace-jump-mode     :ensure t)
 ;;(use-package ack-and-a-half    :ensure t)
-(use-package all-the-icons     :ensure t)
+;;(use-package all-the-icons     :ensure t)
 (use-package ag                :ensure t)
 (use-package aggressive-indent :ensure t)
 (use-package anakondo
