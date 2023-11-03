@@ -5,6 +5,9 @@
 (when (memq window-system '(mac ns x))
   ;; ssh-agent stuff.. seems like a constant battle
   ;; (exec-path-from-shell-variables '("SSH_AUTH_SOCK" "SSH_AGENT_PID"))
+  ;;   (setq ns-pop-up-frames nil)
+  (set-face-attribute 'default nil
+                      :family "Berkeley Mono" :height 140 :weight 'normal)
   (exec-path-from-shell-initialize))
 
 ;; from https://www.emacswiki.org/emacs/EshellPrompt
