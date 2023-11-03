@@ -225,6 +225,7 @@ Including indent-buffer, which should not be called automatically on save."
      ;;(define-key clojure-mode-map (kbd "<S-s-return>") 'cider-eval-defun-at-point)
      (define-key clojure-mode-map (kbd "<C-S-s-return>") 'cider-eval-buffer)
      (add-to-list 'auto-mode-alist '("\\.edn\\'" . clojure-mode))
+     (add-to-list 'auto-mode-alist '("\\.clj_kondo\\'" . clojure-mode))
      (add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))))
 
 (require 'cider-eval-sexp-fu)
