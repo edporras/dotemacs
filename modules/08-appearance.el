@@ -62,7 +62,7 @@
 ;;(setq doom-modeline-major-mode-color-icon nil)
 ;;(setq doom-modeline-minor-modes nil)
 ;;(setq doom-modeline-env-version t)
-;;(setq doom-modeline-lsp t)
+(setq doom-modeline-lsp t)
 ;;(setq doom-modeline-persp-name t)
 ;;(setq doom-modeline-display-default-persp-name nil)
 
