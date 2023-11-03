@@ -20,8 +20,7 @@
  ;; If there is more than one, they won't work right.
  '(menu-bar-mode nil)
  '(package-selected-packages
- (quote
-  (flycheck-clj-kondo jenkins-mode groovy-mode jenkins smartscan doom-modeline highlight-doxygen color-theme-modern flycheck rbenv enh-ruby-mode rubocop inf-ruby dockerfile-mode csv-mode cider magit-tramp package-build shut-up epl git commander f dash s use-package typescript-mode dired-details applescript-mode company-pollen pollen-mode edn gnuplot which-key org-babel-eval-in-repl htmlize ox-reveal ttl-mode sparql-mode yaml-mode visual-regexp undo-tree tuareg smex smartparens slime-company skewer-mode robe restclient rainbow-mode processing-mode pretty-symbols powerline paredit motion-mode markdown-mode magit json-mode js2-refactor ido-ubiquitous haml-mode go-mode geiser fringe-helper flymake-ruby flymake-coffee find-file-in-project expand-region elisp-slime-nav diminish company-quickhelp company-inf-ruby company-ghc coffee-mode cider-eval-sexp-fu bundler aggressive-indent ag ace-jump-mode)))
+ '(flycheck-clj-kondo jenkins-mode groovy-mode jenkins smartscan doom-modeline highlight-doxygen color-theme-modern flycheck rbenv enh-ruby-mode rubocop inf-ruby dockerfile-mode csv-mode cider magit-tramp package-build shut-up epl git commander f dash s use-package typescript-mode dired-details applescript-mode company-pollen pollen-mode edn gnuplot which-key org-babel-eval-in-repl htmlize ox-reveal ttl-mode sparql-mode yaml-mode visual-regexp undo-tree tuareg smex smartparens slime-company skewer-mode robe restclient rainbow-mode processing-mode pretty-symbols powerline paredit motion-mode markdown-mode magit json-mode js2-refactor ido-ubiquitous haml-mode go-mode geiser fringe-helper flymake-ruby flymake-coffee find-file-in-project expand-region elisp-slime-nav diminish company-quickhelp company-inf-ruby company-ghc coffee-mode cider-eval-sexp-fu bundler aggressive-indent ag ace-jump-mode))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 
@@ -56,11 +55,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-scrollbar-bg ((t (:background "#2f2f2f"))))
- '(company-scrollbar-fg ((t (:background "#222222"))))
  '(company-tooltip ((t (:inherit default :background "#1b1b1b"))))
  '(company-tooltip-common ((t (:inherit font-lock-constant-face))))
  '(company-tooltip-common-selection ((t (:inherit font-lock-keyword-face))))
+ '(company-tooltip-scrollbar-thumb ((t (:background "#222222"))))
+ '(company-tooltip-scrollbar-track ((t (:background "#2f2f2f"))))
  '(company-tooltip-selection ((t (:inherit font-lock-keyword-face)))))
 (put 'narrow-to-region 'disabled nil)
 ;;; init.el ends here
