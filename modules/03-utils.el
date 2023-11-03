@@ -106,6 +106,8 @@ length of PATH (sans directory slashes) down to MAX-LEN."
 
 ;; eshell ansi handling
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(define-key comint-mode-map (kbd "<up>") 'comint-previous-input)
+(define-key comint-mode-map (kbd "<down>") 'comint-next-input)
 
 ;; undo-tree is pretty nifty
 (require 'undo-tree)
