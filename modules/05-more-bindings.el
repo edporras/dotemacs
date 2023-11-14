@@ -22,9 +22,9 @@
 
 ;; ido-mode is a work of beauty and magic
 (ido-mode t)
-(ido-grid-mode 1)
-(ido-everywhere t)
-(ido-ubiquitous-mode t)
+;;(ido-grid-mode 1)
+;;(ido-everywhere t)
+;;(ido-ubiquitous-mode t)
 (setq ido-enable-prefix nil
       ido-enable-flex-matching t
       ido-auto-merge-work-directories-length nil
@@ -33,8 +33,11 @@
       ido-use-virtual-buffers t
       ido-handle-duplicate-virtual-buffers 2
       ido-max-prospects 10
-      ido-grid-mode-max-rows 4
-      ido-grid-mode-start-collapsed t)
+      ;;ido-grid-mode-max-rows 4
+      ;;ido-grid-mode-start-collapsed t
+      )
+
+(setq ido-file-extensions-order '(".clj" ".edn" ".org" ".txt" ".emacs.d" ".xml" ".el" ".cfg"))
 
 ;; smex is "smart M-x"
 (smex-initialize)
