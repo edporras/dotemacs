@@ -233,6 +233,15 @@ Including indent-buffer, which should not be called automatically on save."
 
 
 
+(with-eval-after-load 'lsp-mode
+  (setq lsp-idle-delay 0.5
+        lsp-lens-enable t
+        gc-cons-threshold 100000000
+        read-process-output-max (* 1024 1024) ;; 1mb
+        lsp-file-watch-threshold 2000
+        ;;lsp-headerline-breadcrumb-enable t
+        ))
+
 ;; babashka
 (add-to-list 'interpreter-mode-alist '("bb" . clojure-mode))
 
