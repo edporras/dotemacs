@@ -12,6 +12,7 @@
 
 (package-install 'use-package) ;; (if this fails, e.g. because it can't find such-and-such version, try manually executing `package-refresh-contents`)
 
+(setq package-native-compile t)
 
 ;;;; Packages we require
 ;;;; - Listed alphabetically
