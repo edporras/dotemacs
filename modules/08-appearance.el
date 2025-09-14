@@ -54,7 +54,7 @@
 
 ;; doom-modeline config
 ;;(setq doom-modeline-height 20)
-(set-face-attribute 'mode-line nil :family "Meslo LG S DZ Regular" :height 110)
+(set-face-attribute 'mode-line nil :family "Meslo LG S DZ Regular" :height 120)
 ;;(set-face-attribute 'mode-line-inactive nil :family "Menlo" :height 110)
 (setq doom-modeline-icon t)
 (setq doom-modeline-major-mode-icon t)
