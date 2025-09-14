@@ -129,6 +129,7 @@ length of PATH (sans directory slashes) down to MAX-LEN."
 (setq magit-revision-insert-related-refs nil)
 (setq magit-diff-highlight-trailing nil)
 (setq magit-diff-paint-whitespace nil)
+(setq magit-show-long-lines-warning nil)
 ;; re-enable --set-upstream switch
 ;; (magit-define-popup-switch 'magit-push-popup
 ;;                            ?u "Set upstream" "--set-upstream")
@@ -218,6 +219,16 @@ length of PATH (sans directory slashes) down to MAX-LEN."
 ;; discover-mode
 ;; https://www.masteringemacs.org/article/discoverel-discover-emacs-context-menus
 (global-discover-mode 1)
+
+;; Add a keybinding to easily switch between a file and its unit test
+(projectile-mode +1)
+;; Recommended keymap prefix on macOS
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+
+;; (map! :leader
+;;       :desc "Go to [test ⯇⯈ implementation] file"
+;;       :n
+;;       "p q" #'projectile-toggle-between-implementation-and-test)
 
 ;; https://github.com/raxod502/selectrum
 ;; (selectrum-mode +1)

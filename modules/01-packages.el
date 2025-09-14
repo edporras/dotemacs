@@ -19,33 +19,15 @@
 ;;;; - Line breaks
 ;;;;   - every 10 packages, or
 ;;;;   - if the package requires special config (e.g. pinning to a particular archive)
-;;(use-package ace-jump-mode     :ensure t)
-;;(use-package ack-and-a-half    :ensure t)
-;;(use-package all-the-icons     :ensure t)
 (use-package ag                :ensure t)
 (use-package aggressive-indent :ensure t)
-(use-package anakondo
-  :ensure t
-  :commands anakondo-minor-mode)
 (use-package avy               :ensure t)
 (use-package bundler           :ensure t)
 (use-package caml              :ensure t)
 
 (use-package cider
   :ensure t
-  :pin melpa-stable
-  ;; :config
-  ;; (advice-add 'cider-ansi-color-string-p :override
-  ;;             (lambda (string) (string-match "�\\[" string)))
-  ;; (advice-add 'cider-font-lock-as
-  ;;             :before
-  ;;             (lambda (&rest r)
-  ;;               (advice-add 'substring-no-properties :override #'identity)))
-  ;; (advice-add 'cider-font-lock-as
-  ;;             :after
-  ;;             (lambda (&rest r)
-  ;;               (advice-remove 'substring-no-properties #'identity)))
-  )
+  :pin melpa-stable)
 (use-package cider-eval-sexp-fu
   :ensure t
   :config
@@ -55,9 +37,7 @@
 (use-package clojure-mode         :ensure t)
 (use-package coffee-mode          :ensure t)
 (use-package company              :ensure t)
-;; (use-package company-ghc          :ensure t)
 (use-package company-inf-ruby     :ensure t)
-;;(use-package company-go           :ensure t)
 (use-package csv-mode             :ensure t)
 
 (use-package dash                 :ensure t)
@@ -88,27 +68,20 @@
   (require 'flycheck-clj-kondo))
 
 (use-package flymake-coffee       :ensure t)
-;; (use-package flymake-cursor       :ensure t)
-;; (use-package flymake-easy         :ensure t)
-;; (use-package flymake-ruby         :ensure t)
 (use-package fringe-helper        :ensure t)
 (use-package geiser               :ensure t)
 
-(use-package git-commit           :ensure t)
 (use-package ggtags               :ensure t)
 (use-package go-mode              :ensure t)
 (use-package haml-mode            :ensure t)
 (use-package haskell-mode         :ensure t)
 (use-package highlight            :ensure t)
-(use-package ido-completing-read+ :ensure t)
-(use-package ido-grid-mode        :ensure t)
+;;(use-package ido-completing-read+ :ensure t)
+;;(use-package ido-grid-mode        :ensure t)
 (use-package inf-ruby             :ensure t)
 
 (use-package jinja2-mode          :ensure t)
 (use-package jq-mode              :ensure t)
-(use-package js2-mode             :ensure t)
-(use-package js2-refactor         :ensure t)
-(use-package json-mode            :ensure t)
 
 (use-package load-env-vars        :ensure t)
 
@@ -136,7 +109,7 @@
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 (use-package motion-mode          :ensure t)
-(use-package multiple-cursors     :ensure t)
+;;(use-package multiple-cursors     :ensure t)
 
 (use-package nerd-icons
   :custom
@@ -154,9 +127,9 @@
   :init (global-paren-face-mode))
 (use-package pkg-info        :ensure t)
 (use-package poly-ansible    :ensure t)
-;;(use-package powerline       :ensure t)
 (use-package pretty-symbols  :ensure t)
 (use-package processing-mode :ensure t)
+(use-package projectile      :ensure t)
 (use-package rainbow-mode    :ensure t)
 (use-package robe            :ensure t)
 (use-package rbenv           :ensure t)
@@ -175,11 +148,63 @@
 (use-package smex            :ensure t)
 (use-package sr-speedbar     :ensure t)
 
+(use-package typescript-ts-mode
+  :mode (("\\.js\\'" . typescript-ts-mode)
+         ("\\.ts\\'" . typescript-ts-mode)
+         ("\\.tsx\\'" . tsx-ts-mode)))
 (use-package tuareg          :ensure t)
-;;(use-package typopunct       :ensure t)
+
+
 (use-package undo-tree       :ensure t)
-;;(use-package uuid            :ensure t)
+
+(use-package vertico
+  :init
+  (vertico-mode)
+  ;; Show more candidates
+  (setq vertico-count 20)
+
+  ;; Grow and shrink the Vertico minibuffer
+  (setq vertico-resize t)
+
+  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
+  (setq vertico-cycle t)
+
+  ;; Add prompt indicator to `completing-read-multiple'.
+  ;; We display [CRM<separator>], e.g., [CRM,] if the separator is a comma.
+  (defun crm-indicator (args)
+    (cons (format "[CRM%s] %s"
+                  (replace-regexp-in-string
+                   "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
+                   crm-separator)
+                  (car args))
+          (cdr args)))
+  (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
+
+  ;; Do not allow the cursor in the minibuffer prompt
+  ;; (setq minibuffer-prompt-properties
+  ;;       '(read-only t cursor-intangible t face minibuffer-prompt))
+  ;; (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+
+  ;; Emacs 28: Hide commands in M-x which do not work in the current mode.
+  ;; Vertico commands are hidden in normal buffers.
+  ;; (setq read-extended-command-predicate
+  ;;       #'command-completion-default-include-p)
+
+  ;; Enable recursive minibuffers
+  (setq enable-recursive-minibuffers t)
+  :ensure t)
+
+(use-package orderless
+  :init
+  ;; Configure a custom style dispatcher (see the Consult wiki)
+  ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
+  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
+
 (use-package visual-regexp   :ensure t)
+
 (use-package web-mode        :ensure t)
 (use-package which-key       :ensure t)
 (use-package yaml-mode       :ensure t)

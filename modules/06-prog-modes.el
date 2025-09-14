@@ -19,7 +19,9 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; after-load sort of hook?
-(setq company-idle-delay 0.2)
+(setq company-idle-delay 0)
+(setq company-minimum-prefix-length 10)
+
 
 ;; pop-up help for company mode
 ;; (company-quickhelp-mode 1)
@@ -202,7 +204,7 @@ Including indent-buffer, which should not be called automatically on save."
      ;; (add-hook 'clojure-mode-hook #'anakondo-minor-mode)
      ;; (add-hook 'clojurescript-mode-hook #'anakondo-minor-mode)
      ;; (add-hook 'clojurec-mode-hook #'anakondo-minor-mode)
-     (setq cider-enrich-classpath t)
+     ;;(setq cider-enrich-classpath t)
      (setq cider-repl-print-length 1000)
      (setq cider-repl-use-clojure-font-lock t)
      (setq cider-repl-pop-to-buffer-on-connect nil)
@@ -231,8 +233,8 @@ Including indent-buffer, which should not be called automatically on save."
 
 (require 'cider-eval-sexp-fu)
 (setq cider-eval-sexp-fu-flash-duration 0.2)
-
-
+;; workaround for emacs-28 bug
+(setq image-types (cons 'svg image-types))
 
 (with-eval-after-load 'lsp-mode
   (setq lsp-idle-delay 0.5
@@ -309,6 +311,9 @@ Including indent-buffer, which should not be called automatically on save."
 ;; XML/plist
 (add-to-list 'auto-mode-alist '("\\.plist'" . xml-mode))
 
+;; yaml
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+
 ;;;;;; JAVASCRIPT/COFFEESCRIPT
 
 ;; js2-mode
@@ -316,6 +321,9 @@ Including indent-buffer, which should not be called automatically on save."
 (setq-default js2-auto-indent-p t)
 (setq-default js2-global-externs '("module" "require" "jQuery" "$" "_" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON"))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+(setq inhibit-compacting-font-caches t)
+(setq blink-matching-paren nil)
 
 ;; tern for completion and such?
 
